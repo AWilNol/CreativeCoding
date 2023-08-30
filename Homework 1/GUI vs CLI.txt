@@ -1,9 +1,0 @@
-GUI VS CLI
-
-From what I understand, GUI is an image-oriented operating system with graphic representations/ elements for files, menus, etcetera.  CLI, on the other hand, is command-oriented, using text to navigate and interact with the operating system. A system's operating system can provide either CLI or GUI or sometimes both CLI and GUI to interact. GUI is slower than CLI, not only when the user is familiar with CLI and not used to GUI, but systematically. 
-
-"CLI permits users to put in writing commands associate degree exceedingly in terminal or console window to interact with an operating system. CLI is a platform or medium wherever users answer a visible prompt by writing a command and get the response from the system, for this users have to be compelled to kind command or train of command for performing the task," (https://www.geeksforgeeks.org/difference-between-cli-and-gui/).
-
-
-Other Sources:
-https://byjus.com/gate/difference-between-cli-and-gui/
