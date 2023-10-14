@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300&family=Lora&family=Tinos&display=swap');
 
-h1 {
-  
+.blueColor {
+   font-family: Lora, Helvetica, san-serif;
+   color: ##87CEEB;
+   font-size: 18px;
+} 
+span.blueColor {
+    font-family: Lora, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #6495ED;
 }
-span {
-          font-family: Lora, Helvetica, san-serif;
-          color: #20B2AA;
-       } 
