@@ -18,3 +18,15 @@ body {
    font-weight: bold;
    color: #0000CD;
 }
+#contact {
+   font-size: 16em;
+   color: #800080;
+}
+#home {
+   font-size: 17em;
+   color: #9932CC; 
+}
+#content {
+   font-size: 18em;
+   color: #8B008B;
+}
