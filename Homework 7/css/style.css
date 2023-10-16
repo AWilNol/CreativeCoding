@@ -7,28 +7,14 @@ h2 {
     color:#1E90FF;
 }
 body {
-   background-color: #AFEEEE;
-   overflow: hidden;
+   background-color: #AFEEEE; 
+   background-image: url("./images/garden.jpg");
+   width: 100%;  
 }
-
-.background {
-   position: relative;
-   text-alignment: center;
-   overflow: hidden;
+.content {
+   font-weight: italic;
 }
-
-.buttonClass {
-    font-size: 18px;
-    color: #00BFFF;
-    text-align: left;
-}
-.blueColor {
-   font-family: Lora, Helvetica, san-serif;
-   color: ##87CEEB;
-   font-size: 18px;
-} 
-span.blueColor {
-    font-family: Lora, Helvetica, sans-serif;
-    font-size: 18px;
-    color: #6495ED;
+.title {
+   font-weight: bold;
+   color: #0000CD;
 }
