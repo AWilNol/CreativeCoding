@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300&family=Lora&family=Tinos&display=swap');
 
+div {
+    color: #00BFFF;
+}
+h2 {
+    color:#1E90FF;
+}
+body {
+   width: 1315px;
+   height: 635px;
+   overflow: hidden;
+}
+
+.background {
+   position: relative;
+   text-alignment: center;
+   overflow: hidden;
+}
+
+.buttonClass {
+    font-size: 18px;
+    color: #00BFFF;
+    text-align: left;
+}
 .blueColor {
    font-family: Lora, Helvetica, san-serif;
    color: ##87CEEB;
