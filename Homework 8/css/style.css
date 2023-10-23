@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300&family=Lora&family=Tinos&display=swap');
+
+div {
+    color: #00BFFF;
+}
+h2 {
+    color:#1E90FF;
+}
+body {
+   background-color: #AFEEEE; 
+   background-image: url("./images/garden.jpg");
+   width: 100%;  
+}
+.content {
+   font-weight: italic;
+}
+.title {
+   font-weight: bold;
+   color: #0000CD;
+}
+#contact {
+   font-size: 16em;
+   color: #800080;
+}
+#home {
+   font-size: 17em;
+   color: #9932CC; 
+}
+#content {
+   font-size: 18em;
+   color: #8B008B;
+}
