@@ -152,9 +152,10 @@
                 <span style="font-family: Lora, sans-serif; color:#00BFFF;"> Terms of Agreement?</span>
               </td>
               <td>                
-                <input type="radio" name="answer" value="yes"> Yes<br>
-                <input type="radio" name="answer" value="no"> No<br>
-                <input type="radio" name="answer" value="questions"> I have Questions<br> 
+                <input type="radio" name="answer" value="yes" required data-rule-required="true" data-msg-required="You cannot leave it blank."> Yes<br>
+                <input type="radio" name="answer" value="no" required data-rule-required="true" data-msg-required="You cannot leave it blank."> No<br>
+                <span class="error1" style="display: none;"><i class="error-log fa fa-exclamation-triangle"></i>
+                </span>
               </td> 
             </tr>
           </table>
