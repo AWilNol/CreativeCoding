@@ -11,6 +11,9 @@ body {
    background-image: url("./images/garden.jpg");
    width: 100%;  
 }
+p {
+   font-size: 14px;
+}
 .content {
    font-weight: italic;
 }
@@ -23,10 +26,10 @@ body {
    color: #800080;
 }
 #home {
-   font-size: 17em;
+   font-size: 14px;
    color: #9932CC; 
 }
 #content {
-   font-size: 18em;
+   font-size: 14px;
    color: #8B008B;
 }
