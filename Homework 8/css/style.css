@@ -33,3 +33,19 @@ p {
    font-size: 14px;
    color: #8B008B;
 }
+input {
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+input:required {
+  border-color: blue;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+}

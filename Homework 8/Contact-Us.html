@@ -124,7 +124,8 @@
          <table>
             <tr>
               <td>Name</td>
-              <td><input type="text" id="txtName"></td>
+              <td><<input id="name" type="text" pattern="[a-zA-Z]+" required="required" /></td>
+              <td><input id="name" type="text" pattern="[a-zA-Z]+" /></td>
             </tr>
             <tr>
               <td>Phone Number</td>
@@ -132,7 +133,8 @@
             </tr>
             <tr>
               <td>Email</td>
-              <td><input type="text" id="email"></td>
+              <td><<input id="email" type="text" pattern="[A-Za-z0-9._+\-\']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$" required="required" /></td>
+              <td><input id="email" type="text" pattern="[A-Za-z0-9._+\-\']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$" /></td>
             </tr>
             <tr>
               <td colspan="3"><button id="btnSubmit" onClick="getData();">Give It Up!</button></td>
