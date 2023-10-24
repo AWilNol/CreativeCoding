@@ -31,8 +31,7 @@
       {
         var answer = document.getElementById("textAnswer").value;
         document.getElementById("finalResult").innerHTML = "Your answer is " + answer;
-      }
-      {
+      
         var answer = document.getElementById("textAnswer").value;
         if (answer == 10)
         {
@@ -56,8 +55,8 @@
       }
       function checkAnswer()
       {
-        var answer = document.getElementById("txt answer").value;
-        if (answer == actualAnswer)
+        var answer = document.getElementById("txtAnswer").value;
+        if (answer == 10)
         {
           document.getElementById("finalResult").innerHTML = "Good Job!";
         }
@@ -67,6 +66,7 @@
         }
       }
     </script>
+  </head>
      <body onload="printQuestion();">
       <div id="theQuestion"></div>
       <div id="finalResult"></div>
