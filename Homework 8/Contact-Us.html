@@ -22,7 +22,6 @@
     </style>   
     
     <script>
-       window.alert("Thank you! A moment, please...");
        document.write("Hello, and all the best.");
     </script>
     <script>
@@ -88,84 +87,18 @@
   </head>    
    <body>     
     <div>
-     <form action="Contact-Us.html" type="POST">
-         <table>
-            <tr>
-              <td>First Name <input type="text" id="fName"><span id="fNameMessage"></span></td>
-              <td>Last Name <input type="text" id="lName"><span id="lNameMessage"></span></td>
-            </tr>
-            <tr>
-              <td>Phone Number</td>
-              <td><input type="text" id="txtPhone"></td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td><input id="email" type="text" id="email"><span id="emailMessage"></span></td>
-              </tr>
-              
-          </table>
-            <form action="Contact-Us.html" type="POST"> 
-             <table>
-            <tr>
-              <td>
-                <span style="font-family: Lora, sans-serif; color:#000000;"> Terms of Agreement: Do you agree to smile at this question?</span>
-              </td>
-              <td>                
-                <input type="radio" value="yes" id="yes" name="accept"> Yes<br>
-                <input type="radio" value="no"  id="no" name="accept"> No<br>
-            
-                </span>
-              </td> 
-            </tr>
-          </table>
+     <p></p>
         
-        </form>
-        </div> 
-            <tr>
-              <td><button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Give It Up!</button></td>
-            </tr>
-         </table>
-        </form>
-       </div>
-        <br />
-      
-        <div>
-        <form action="Contact-Us.html" type="POST">
-          <table>
-            <tr>
-               <td>
-                <span style="color:#000000;"> Kids are</span>
-               </td>
-               <td>
-                 <select>
-                    <option value="adorable"> Adorable!</option>
-                    <option value="kids"> Kids</option>
-                    <option value="littles"> Littles</option>
-                    <option value="brats"> Brats</option>
-                 </select>
-               </td>
-            </tr>
-          </table>
-        </form>
-        </div>
-        <br />
-        
-        <div>
-        <form action="Contact-Us.html" type="POST"> 
-          <table>
-            <tr>
-              <td>
-                <span style="font-family: Lora, sans-serif; color:#000000;"> Love Kids?</span>
-              </td>
-              <td>
-                <input type="radio" name="answer" value="love"> Love Them!<br>
-                <input type="radio" name="answer" value="yes"> Yes<br>
-                <input type="radio" name="answer" value="no"> No<br>
-                <input type="radio" name="answer" value="kids"> What R Kids?<br> 
-              </td> 
-            </tr>
-          </table>
-        </form>
+            <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
+            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span</p>
+            <p></p>
+            <p>Accept the terms of agreement-</p>
+            <p>Terms of Agreement: Please smile!</p> 
+            <br>
+            <input type="radio" value="yes" id="yes" name="accept">Yes<br>
+            <input type="radio" value="no" id="no" name="accept">No
+            <br>
+            <button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button>
         </div>
         
       <span id="ahref"><p style="text-align: center;"><a href="index.html" id="home">Back to the Start</a></p></span>
