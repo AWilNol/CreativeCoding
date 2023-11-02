@@ -3,11 +3,16 @@
  circle because I replaced with my self-portrait
  */
 var myFavoriteNumber = 7;
-var name = "John Sena";
+var name = "John Cena";
 var age = 67;
 var redColor = 123;
 var greenColor = 39;
 var blueColor = 21;
+
+var x = 100;
+var y = 200;
+var diameter = 50
+
 function doSomething()
   {
    var myFavoriteColor = "green";
@@ -38,6 +43,7 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(250, 100, 65);
+    x++;
     //*face*//
     //*righteye*//
     fill(255, 255, 255);
