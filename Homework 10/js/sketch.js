@@ -8,11 +8,6 @@ var age = 67;
 var redColor = 123;
 var greenColor = 39;
 var blueColor = 21;
-
-var x = 100;
-var y = 200;
-var diameter = 50
-
 function doSomething()
   {
    var myFavoriteColor = "green";
@@ -25,6 +20,9 @@ for(var i = 0; i < 5; i++)
  the setup function ensures we have a canvas to draw on,
  and is only done one time
  */
+var x = 100;
+var y = 200;
+var diameter = 50
 function setup()
   {
     createCanvas(500,600);
@@ -43,6 +41,7 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(250, 100, 65);
+    x++;
     //*face*//
     //*righteye*//
     fill(255, 255, 255);
