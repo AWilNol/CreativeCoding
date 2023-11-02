@@ -43,7 +43,6 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(250, 100, 65);
-    x++;
     //*face*//
     //*righteye*//
     fill(255, 255, 255);
