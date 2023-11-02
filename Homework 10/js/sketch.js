@@ -1,6 +1,6 @@
 /*
- Michael, I am wondering what this does and if it is part
- of the colorful background.
+ Michael, I can no longer comment on the
+ circle because I replaced with my self-portrait
  */
 var myFavoriteNumber = 7;
 var name = "John Sena";
