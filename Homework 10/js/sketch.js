@@ -1,6 +1,6 @@
 /*
- the setup function ensures we have a canvas to draw on,
- and is only done one time
+ Michael, I am wondering what this does and if it is part
+ of the colorful background.
  */
 var myFavoriteNumber = 7;
 var name = "John Sena";
@@ -16,7 +16,10 @@ for(var i = 0; i < 5; i++)
   {
   console.log(i);
   }
-
+/*
+ the setup function ensures we have a canvas to draw on,
+ and is only done one time
+ */
 function setup()
   {
     createCanvas(500,600);
