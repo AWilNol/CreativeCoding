@@ -26,7 +26,7 @@ function setup()
 /* I notice with this one it will stop, 
 where just random would not. I tried max but it cleared
 the shapes from the body.*/
-    movement = Math.floor(Math.randomGaussian() * 10) + 1;
+    movement = Math.floor(Math.random() * 10) + 1;
   } 
 function draw()
   {
