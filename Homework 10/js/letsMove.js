@@ -23,6 +23,9 @@ var movement = 8;
 function setup()
   {
     createCanvas(500,800);
+/* I notice with this one it will stop, 
+where just random would not. I tried max but it cleared
+the shapes from the body.*/
     movement = floor(randomGaussian() * 10) + 1;
   } 
 function draw()
