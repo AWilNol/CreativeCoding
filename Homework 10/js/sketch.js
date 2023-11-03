@@ -20,7 +20,7 @@ for(var i = 0; i < 5; i++)
  the setup function ensures we have a canvas to draw on,
  and is only done one time
  */
-var x = 100;
+var larmx = 150;
 var y = 200;
 var diameter = 50
 function setup()
@@ -41,7 +41,6 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(250, 100, 65);
-    x++;
     //*face*//
     //*righteye*//
     fill(255, 255, 255);
@@ -65,7 +64,7 @@ function draw()
     circle(174, 255 ,40);
     //*leftarm*//
     fill(200, 75, 600);
-    rect(150, 132, 45, 125);
+    rect(larmx, 150, 132, 45, 125);
     //*righthand*//
     fill(261, 215, 153);
     circle(300, 255 ,40);

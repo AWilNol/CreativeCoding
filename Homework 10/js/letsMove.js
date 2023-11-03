@@ -1,10 +1,41 @@
-// create a multi-line comment to talk about the setup function
-function setup() {
-  createCanvas(300, 500);
-}
-function draw() {
-  background(220);
-  // create another single line comment to say when the following line is doing
-  circle(35,55,25);
-  
-}
+var myFavoriteNumber = 7;
+var name = "John Cena";
+var age = 67;
+var redColor = 123;
+var greenColor = 39;
+var blueColor = 21;
+/* Hi Michael, All that shows here is a background and circle,
+ nothing is working. Is the order/grouping wrong? Can I better 
+ place these? Does the order matter?*/
+var x = 100;
+var y = 200;
+var diameter = 50;
+
+function doSomething()
+  {
+   var myFavoriteNumber = 3;
+   var myFavoriteColor = "green";
+  }
+for(var i = 0; i < 5; i++);
+  {
+  console.log(i);
+  }
+function setup()
+  {
+    createCanvas(500,800);
+  } 
+function draw()
+  {
+    background(redColor,greenColor,blueColor);
+    fill(255);
+    circle(x,y,diameter);
+    fill(redColor,greenColor,blueColor);
+    circle(x,y,25);
+    x++;
+    y++;
+    if(x != 800)
+    {
+        x+=10;
+        y+=10;
+    }
+   }
