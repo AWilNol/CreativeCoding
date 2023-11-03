@@ -22,7 +22,7 @@ for(var i = 0; i < 5; i++);
   }
 function setup()
   {
-    createCanvas(800,500);
+    createCanvas(500,800);
   } 
 function draw()
   {
@@ -31,9 +31,7 @@ function draw()
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
     circle(x,y,25);
-    x++;
-    y++;
-    if(x != 800)
+    if(x <= 500)
     {
         x+=13;
         y+=13;
