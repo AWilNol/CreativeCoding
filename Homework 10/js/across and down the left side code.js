@@ -10,6 +10,7 @@ var blueColor = 21;
 var x = 100;
 var y = 200;
 var diameter = 50;
+
 function doSomething()
   {
    var myFavoriteNumber = 3;
@@ -19,11 +20,9 @@ for(var i = 0; i < 5; i++);
   {
   console.log(i);
   }
-var movement = 8;
 function setup()
   {
     createCanvas(500,800);
-    movement = floor(randomGaussian() * 10) + 1;
   } 
 function draw()
   {
@@ -32,10 +31,14 @@ function draw()
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
     circle(x,y,25);
-    if(x >= 500 || x <= 0)
+    if(x <= 500)
     {
-      movement *= -1;
+        x+=8;
+        y+=8;
     }
-    
-     x += movement;
-  }
+    else
+    {
+      x-=8;
+      y-+8;
+    }
+   }
