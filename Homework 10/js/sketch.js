@@ -10,7 +10,7 @@ var greenColor = 39;
 var blueColor = 21;
 function doSomething()
   {
-   var myFavoriteColor = "green";
+   var myFavoriteColor = "blue";
   }
 for(var i = 0; i < 5; i++)
   {
