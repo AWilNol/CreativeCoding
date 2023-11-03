@@ -22,7 +22,7 @@ for(var i = 0; i < 5; i++);
   }
 function setup()
   {
-    createCanvas(500,800);
+    createCanvas(800,500);
   } 
 function draw()
   {
@@ -35,7 +35,7 @@ function draw()
     y++;
     if(x != 800)
     {
-        x+=10;
-        y+=10;
+        x+=13;
+        y+=13;
     }
    }
