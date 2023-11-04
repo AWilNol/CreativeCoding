@@ -21,12 +21,14 @@
         background-image: url("./images/dragon.jpg");
         width: 100%;
         max-height: 1080px;
-
       }
     </style>   
     
     <script>
+      {
        document.write("Hello, and all the best.");
+       window.alert("Please provide your name, email, and accept the Terms of Agreement. Your time is appreciated.");
+      }
     </script>
     <script>
       function checkboxes()
@@ -35,9 +37,9 @@
         if(name == "")
         {
           document.getElementById("fName").focus();
-          document.getElementById("fName").style.backgroundColor = "orange";
+          document.getElementById("fName").style.backgroundColor = "redOrange";
           document.getElementById("fNameMessage").innerHTML = "* Required";
-          document.getElementById("fNameMessage").style.color "orange";
+          document.getElementById("fNameMessage").style.color "redOrange";
 
           return false;
         }
@@ -47,7 +49,6 @@
           document.getElementById("fNameMessage").innerHTML = "";
           document.getElementById("fNameMessage").style.color = "white";
         }
-
           var lastName = document.getElementById("lName").value;
           if(lName == "")
         {
@@ -68,16 +69,16 @@
           if(email == "")
         {
               document.getElementById("email").focus();
-          document.getElementById("email").style.backgroundColor = "orange";
+          document.getElementById("email").style.backgroundColor = "red";
           document.getElementById("emailMessage").innerHTML = "* Required";
-          document.getElementById("emailMessage").style.color "orange";
+          document.getElementById("emailMessage").style.color "red";
    
           return false;
         }
         else
         {
          document.getElementById("email").style.backgroundColor = "white";
-         document.getElementById("emailMessage").innerHTML = "";
+         document.getElementById("emailMessage").innerHTML = "* Required";
          document.getElementById("emailMessage").style.color = "white"; 
         }
         var terms = document.getElementById("yes").checked;
@@ -89,12 +90,12 @@
     </script>
        
   </head>    
-   <body onload="">     
+   <body>    
     <div>
      <p></p>
         
             <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
-            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span</p>
+            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
             <p></p>
             <p>Accept the terms of agreement-</p>
             <p>Terms of Agreement: Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="no" name="accept">No</p>
@@ -113,8 +114,7 @@
     </body>
     <script>
       console.log("Can you see me now?");</script>
-    <script>
-      document.getElementById("ahref").innerHTML = "Favorite Color " + favoriteColor;</script>
+    
     <script>
       document.getElementById("myTag").innerHTML = "Thank you for stopping in!";</script>
 </html>
