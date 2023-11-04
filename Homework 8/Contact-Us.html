@@ -5,19 +5,23 @@
     <style>
       span{
         font-family: Lora, Helvetica, sans-serif;
-        color: #20B2AA;        
+        color: #000000;        
       }
       form {
         font-family: Lora, Helvetica, sans-serif;
-        color: #008B8B;
+        color: #000000;
       }
      
       p, input {
         font-family: Helvetica;
-        color: #4682B4;
+        color: #000000;
       }
-      body {
+       body {
         background-color: #AFEEEE;
+        background-image: url("./images/dragon.jpg");
+        width: 100%;
+        max-height: 1080px;
+
       }
     </style>   
     
@@ -85,7 +89,7 @@
     </script>
        
   </head>    
-   <body>     
+   <body onload="">     
     <div>
      <p></p>
         
@@ -93,10 +97,7 @@
             <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span</p>
             <p></p>
             <p>Accept the terms of agreement-</p>
-            <p>Terms of Agreement: Please smile!</p> 
-            <br>
-            <input type="radio" value="yes" id="yes" name="accept">Yes<br>
-            <input type="radio" value="no" id="no" name="accept">No
+            <p>Terms of Agreement: Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="no" name="accept">No</p>
             <br>
             <button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button>
         </div>
