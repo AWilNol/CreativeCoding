@@ -25,85 +25,70 @@
         color: #4682B4;
       }
     </style>
-    <script>
-      function printQuestion()
-      {
-        document.getElementById("theQuestion").innerHTML = "What is 4+6?";
-      }
-      function checkAnswer()
-      {
-        var answer = document.getElementById("textAnswer").value;
-        document.getElementById("finalResult").innerHTML = "Your answer is " + answer;
-      
-        var answer = document.getElementById("textAnswer").value;
-        if (answer == 10)
-        {
-          document.getElementById("finalResult").innerHTML = "Good job!";
-        }
-        else
-        {
-          document.getElementById("finalResult").innerHTML = "Not quite!";
-        }
-      }
-    </script>
-    
-    <script>
-      var actualAnswer;
-      function printQuestion()
-      {
-        var number1 = Math.floor(Math.random() * 10);
-        var number2 = Math.floor(Math.random() * 10);
-        actualAnswer = number1 + number2;
-        document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
-      }
-      function checkAnswer()
-      {
-        var answer = document.getElementById("txtAnswer").value;
-        if (answer == actualAnswer)
-        {
-          document.getElementById("finalResult").innerHTML = "Good Job!";
-        }
-        else
-        {
-          document.getElementById("finalResult").innerHTML = "Not Quite!";
-        }
-      }
-    </script>
+    <html>
+<title>for Loops</title>
 
+<head>
     <script>
-      let score = 10
-      let correctAnswer = 0;
-      function nextQuestion()
-      {
-        let operationDiv = document.getElementById("operation");
-        Math.ceil(Math.random() * 12);
-        Math.ceil(Math.random() * 12);
-        let actualAnswer = firstNum + secondNum;                
+        var actualAnswer;
+        var number1;
+        var number2;
 
-        document.getElementById("btnSubmit").innerHTML = "nextQuestion";
-      }
+        function printQuestion() {
+            number1 = Math.floor(Math.random() * 10);
+            number2 = Math.floor(Math.random() * 10);
+            actualAnswer = number1 + number2;
+            document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+        }
+
+        function checkAnswer() {
+            var answer = document.getElementById("txtAnswer").value;
+            if (answer == actualAnswer) {
+                document.getElementById("finalResult").innerHTML = "Good job!";
+                printQuestion();
+
+            } else {
+                document.getElementById("finalResult").innerHTML = "Try Again!";
+            }
+        }
+
+        function runGame() {
+            for (var i = 1; i < 6; i++) {
+                document.getElementById("message").innerHTML += "<h" + i + ">Welcome to our game!!!</h" + i + "></p>";
+            }
+            printQuestion();
+        }
+        runGame();
     </script>
-    
-  </head>
-     <body onload="printQuestion();" "timeDisplay()">
-      <div id="theQuestion"></div>
-      <div id="finalResult"></div>
-     
-       <div id="timeDisplay" hidden>Time Left: 10</div>
-       <div id="totalScore">Correct/Wrong Score: 0/0</div>
-       <div id="percentScore">Percent Correct: 0%</div>
-       <table>
+</head>
+
+<body onload="runGame();">
+
+    <table>
         <tr>
-          <td>Your answer?</td>
-          <td><input type="text" id="txtAnswer"></td>
+            <td colspan="2">
+                <div id="message"></div>
+            </td>
         </tr>
         <tr>
-          <td colspan="2"><button id="btnSubmit" onClick="checkAnswer()";>Submit</button></td>
+            <td colspan="2">
+                <hr size="1">
+            </td>
         </tr>
-      </table>
-       <div id="finalResult"></div>
-       <br>
-       <br>
+        <tr>
+            <td colspan="2">
+                <div id="theQuestion"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Your answer</td>
+            <td><input type="text" id="txtAnswer"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+        </tr>
+    </table>
+    <div id="finalResult"></div>
          
       <span id="ahref"><p style="text-align: center;"><a href="Contact-Us.html" id="contact">Get in Touch</a></p></span>
       <span id="ahref"><p style="text-align: center;"><a href="index.html" id="home">Back to the Start</a></p></span>
