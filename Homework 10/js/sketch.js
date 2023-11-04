@@ -8,14 +8,8 @@ var age = 67;
 var redColor = 123;
 var greenColor = 39;
 var blueColor = 21;
-function doSomething()
-  {
-   var myFavoriteColor = "blue";
-  }
-for(var i = 0; i < 5; i++)
-  {
-  console.log(i);
-  }
+
+
 /*
  the setup function ensures we have a canvas to draw on,
  and is only done one time
@@ -23,9 +17,20 @@ for(var i = 0; i < 5; i++)
 var larmx = 150;
 var y = 200;
 var diameter = 50
+function doSomething()
+  {
+   var myFavoriteColor = "blue";
+   var myFavoriteNumber = 3;
+  }
+for(var i = 0; i < 3; i++)
+  {
+  console.log(i);
+  }
+  var movement = 8;
 function setup()
   {
     createCanvas(500,600);
+    movement = Math.floor(Math.random() * 10) +1;
   } 
 function draw()
   {
@@ -64,7 +69,7 @@ function draw()
     circle(174, 255 ,40);
     //*leftarm*//
     fill(200, 75, 600);
-    rect(larmx, 150, 132, 45, 125);
+    rect(larmx, 132, 45, 125);
     //*righthand*//
     fill(261, 215, 153);
     circle(300, 255 ,40);
@@ -102,5 +107,6 @@ function draw()
     textSize(20);
     text('"Hands In My Pocket"', 150, 510);
     text('By April Wilson-Nolen', 150, 540);
+     
   }
   
