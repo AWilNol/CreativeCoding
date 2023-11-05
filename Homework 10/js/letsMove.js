@@ -34,13 +34,7 @@ function draw()
   {
     background(redColor,greenColor,blueColor);
     
-    translate(x2,y2);
-    rotate(angle);
-    fill(0);
-    rectMode(CENTER);
-    rect(0, 0, 100, 50);
-    x2 = x + 2;
-    angle = angle + 5;
+    
   
     fill(255);
     circle(x,y,diameter);
@@ -52,4 +46,12 @@ function draw()
     }
     
      x += movement;
+
+    translate(x2,y2);
+    rotate(angle);
+    fill(0);
+    rectMode(CENTER);
+    rect(0, 0, 100, 50);
+    x2 = x + 2;
+    angle = angle + 5;
   }
