@@ -1,28 +1,35 @@
-/*
- Michael, I can no longer comment on the
- circle because I replaced with my self-portrait
- */
 var myFavoriteNumber = 7;
 var name = "John Cena";
 var age = 67;
+var myfavoriteColor = "blue";
 var redColor = 123;
 var greenColor = 39;
 var blueColor = 21;
-/*
- the setup function ensures we have a canvas to draw on,
- and is only done one time
- */
+
 var larmX = 150;
 var larmY = 132;
-var larmDriection = 1;
+var larmDirection = 2;
+
+var bodyX = 200;
+var bodyY = 312;
+var bodyDirection = 1;
+
+var headX = 250;
+var headY = 100;
+var headDiameter = 65;
+var headDirection = 2;
+
+var size = 20;
+var count = 0;
+var sizeDirection = 2;
 
 var x = 100;
 var y = 200;
-var diameter = 500
+var diameter = 500;
 function doSomething()
   {
    var myFavoriteColor = "blue";
-   var myFavoriteNumber = 3;
+   var myFavoriteNumber = 7;
   }
 for(var i = 0; i < 3; i++)
   {
@@ -41,6 +48,10 @@ function draw()
     greenColor++;
     blueColor++;
     myFavoriteNumber+= 2;
+    /*
+    this worked. It was so cool! Now it isn't working.
+    Adding the other shapes that need to move. It seems like 
+    I cut off the legs to the project; everything froze, 1/2 disappeared.*/ 
     fill(569);
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
@@ -48,19 +59,22 @@ function draw()
     x++;
     y++;
     if(x >= 500 || x <= 0)
-    {
-     
+   {
       movement *= -1;
     }
 
      x += movement;
-
     //*hair*//
     fill(103, 59, 21);
     rect(213, 60, 75, 110);    
     //*head**//
     fill(251, 215, 153);
-    circle(250, 100, 65);
+    circle(headX, 100, 65);
+    headX+=headDirection;
+    if(headX >= 500 || headX <= 0)
+    {
+      headDirection *= -1;
+    }
     //*face*//
     //*righteye*//
     fill(255, 255, 255);
@@ -75,22 +89,27 @@ function draw()
     //*mouth*//
     fill(232, 25, 78);
     ellipse(250, 115, 18, 5);
-    line()
+    line();
     //*body*//
     fill(200, 58, 590);
-    rect(200, 132, 95, 115);
+    rect(bodyX, 132, 95, 115);
+    bodyX+=bodyDirection;
+    if(bodyX >= 500 || bodyX <= 0)
+    {
+      bodyDirection *= -1;
+    }
     //*lefthand*//
     fill(251, 215, 153);
-    circle(174, 255 ,40);
+    circle(174, 255, 40);
+    /*been froze since this*/
     //*leftarm*//
     fill(200, 75, 600);
     rect(150, larmY, 45, 125);
-    larmY++;
     larmY += larmDirection;
-    if(larmY <= 0 || larmY >= 500)
+    if(larmY <= 0 || larmY >= 600)
     {
-      larmDirection *= -1;}
-      larmY += movement;
+      larmDirection *= -1;
+    }
     //*righthand*//
     fill(261, 215, 153);
     circle(300, 255 ,40);
@@ -124,10 +143,17 @@ function draw()
     point(250, 245);
     line(245, 242, 245,259);
     line(255, 242, 255, 259);
+    //*text*//
     fill(244,197, 248);
-    textSize(20);
+    textSize(size);
+    size+= sizeDirection;
+    count++;
+    if(count > 5)
+    {
+      sizeDirection *= -1;
+      count = 0;
+    }
     text('"Hands In My Pocket"', 150, 510);
     text('By April Wilson-Nolen', 150, 540);
-
-  }
+    }
   
