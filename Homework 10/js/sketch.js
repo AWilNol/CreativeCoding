@@ -18,8 +18,14 @@ var headX = 250;
 var headY = 100;
 var headDiameter = 65;
 var headDirection = 2;
-var headDiameterDirection = 2;
-var headCount = 0;
+
+var rlegX = 197;
+var rlegY = 250;
+var rlegDirection = 1;
+
+var llegX = 197;
+var llegY = 250;
+var llegSize= 200;
 
 var size = 20;
 var count = 0;
@@ -58,13 +64,12 @@ function draw()
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
     circle(x,y,300);
-    x++;
-    y++;
-    if(x >= 500 || x <= 0)
+    x++, y++;
+    if(x >= 500 || x <= 0 && y <= 0 || y >= 500)
    {
       movement *= -1;
     }
-
+    
      x += movement;
     //*hair*//
     fill(103, 59, 21);
@@ -72,18 +77,10 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(headX, 100, 65);
-    shapeSize(headDiameter)
     headX+=headDirection;
     if(headX >= 500 || headX <= 0)
     {
       headDirection *= -1;
-    }
-    headDiameter+=headDiameterDirection;
-    headCount++;
-    if(headCount > 5)
-    {
-      headDiameterDirection *= -1;
-      headCount = 0;
     }
     //*face*//
     //*righteye*//
@@ -128,10 +125,22 @@ function draw()
     rect(300, 132, 45, 125);
     //*leftleg*//
     fill(58, 47, 203);
-    rect(197, 250, 50, 200);
+    rect(llegX, llegY, 50, 200);
+    llegX++, llegY++;
+    if(llegX, llegY >= 500 || llegX, llegY <= 0)
+   {
+      movement *= -1;
+    }
+
+     x += movement;
     //*rightleg*//
     fill(58, 47, 203);
-    rect(250, 250, 50, 200);
+    rect(250, rlegY, 50, 200);
+    rlegY += rlegDirection;
+    if(rlegY <= 0 || rlegY >= 600)
+    {
+      rlegDirection *= -1;
+    }
     //*belttie*//
     fill(10, 103, 229);
     rect(195, 247, 20, 110);
