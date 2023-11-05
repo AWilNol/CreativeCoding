@@ -20,17 +20,28 @@ for(var i = 0; i < 5; i++);
   console.log(i);
   }
 var movement = 8;
+let angle = 0;
+let x2 = 50;
+let y2 = 50;
+
 function setup()
   {
     createCanvas(500,800);
-/* I notice with this one it will stop, 
-where just random would not. I tried max but it cleared
-the shapes from the body.*/
+    angleMode(DEGREES);
     movement = Math.floor(Math.random() * 10) + 1;
   } 
 function draw()
   {
     background(redColor,greenColor,blueColor);
+    
+    translate(x2,y2);
+    rotate(angle);
+    fill(0);
+    rectMode(CENTER);
+    rect(0, 0, 100, 50);
+    x2 = x + 2;
+    angle = angle + 5;
+  
     fill(255);
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
