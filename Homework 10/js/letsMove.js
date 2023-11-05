@@ -9,7 +9,7 @@ var blueColor = 21;
  place these? Does the order matter?*/
 var x = 100;
 var y = 200;
-var diameter = 50;
+var diameter = 150;
 function doSomething()
   {
    var myFavoriteNumber = 3;
@@ -24,7 +24,9 @@ let angle = 0;
 let x2 = 50;
 let y2 = 50;
 
-
+var bodyX = 200;
+var bodyY = 132;
+var bodyDirection = 1;
 
 function setup()
   {
@@ -58,12 +60,11 @@ function draw()
     //rotate(-angle);
     //translate(-50, -50);
 
-
-    
+    fill(greenColor,blueColor);
+    circle(x,y,300);
     fill(255);
     circle(x,y,diameter);
-    fill(redColor,greenColor,blueColor);
-    circle(x,y,25);
+    
     if(x >= 500 || x <= 0)
     {
       movement *= -1;

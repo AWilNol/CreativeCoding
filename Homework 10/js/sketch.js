@@ -10,10 +10,6 @@ var larmX = 150;
 var larmY = 132;
 var larmDirection = 2;
 
-var bodyX = 200;
-var bodyY = 132;
-var bodyDirection = 1;
-
 var headX = 250;
 var headY = 100;
 var headDirection = 2;
@@ -43,10 +39,17 @@ for(var i = 0; i < 3; i++)
   {
   console.log(i);
   }
- var movement = 8; 
+var movement = 6; 
+let angle = 0;
+ 
+var bodyX = 200;
+var bodyY = 132;
+var bodyDirection = 1;
+
 function setup()
   {
     createCanvas(500,800);
+    angleMode(DEGREES);
     movement = Math.floor(Math.random() * 10) +1;
   } 
 function draw()
@@ -62,12 +65,11 @@ function draw()
     fill(redColor,greenColor,blueColor);
     circle(x,y,300);
     x++; y++;
-    if(y <= 500 || y >= 0)
+    if(x >= 200 || x <= 0)
    {
-      movement *= 1;
+      movement *= -1;
     }
-    
-     x += movement;
+      x += movement;
     //*hair*//
     fill(103, 59, 21);
     rect(213, 60, 75, 110);    
@@ -98,14 +100,21 @@ function draw()
     ellipse(250, 115, 18, 5);
     line();
     //*body*//
+    push()
+    translate(bodyX,bodyY);
+    rotate(-angle * 3);
     fill(200, 58, 590);
-    rect(bodyX, 132, 95, 115);
-    bodyX+=bodyDirection;
-    if(bodyX >= 500 || bodyX <= 0)
+    rectMode(CENTER);
+    rect(0, 0, 95, 115);
+    bodyX = x + 2;
+    angle = angle + 5;
+    if(bodyX >= 800 || bodyX <= 0)
     {
-      bodyDirection *= -1;
-      movement *= 1;
+      bodyXDirection *= -1;
+      movement += -1;   
     }
+    pop()
+
     //*lefthand*//
     fill(251, 215, 153);
     circle(174, 255, 40);
