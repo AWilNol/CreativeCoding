@@ -10,6 +10,7 @@ var larmX = 150;
 var larmY = 132;
 var larmDirection = 2;
 
+let angle = 0;
 var bodyX = 200;
 var bodyY = 312;
 var bodyDirection = 1;
@@ -43,10 +44,11 @@ for(var i = 0; i < 3; i++)
   {
   console.log(i);
   }
-  var movement = 8;
+ var movement = 8; 
 function setup()
   {
     createCanvas(500,800);
+    angleMode(DEGREES);
     movement = Math.floor(Math.random() * 10) +1;
   } 
 function draw()
@@ -96,14 +98,20 @@ function draw()
     ellipse(250, 115, 18, 5);
     line();
     //*body*//
+    push();
+    translate(bodyX,bodyY);
+    rotate(angle);
     fill(200, 58, 590);
-    rect(bodyX, 132, 95, 115);
-    bodyX+=bodyDirection;
+    rectMode(CENTER);
+    rect(0, 0, 95, 115);
+    bodyX = bodyX + 2;
+    angle = angle + 5;
     if(bodyX >= 500 || bodyX <= 0)
     {
       bodyDirection *= -1;
-      movement += -2;
+      movement *= -1;
     }
+    pop();
     //*lefthand*//
     fill(251, 215, 153);
     circle(174, 255, 40);

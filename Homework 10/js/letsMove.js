@@ -24,6 +24,8 @@ let angle = 0;
 let x2 = 50;
 let y2 = 50;
 
+
+
 function setup()
   {
     createCanvas(500,800);
@@ -32,10 +34,32 @@ function setup()
   } 
 function draw()
   {
-    background(redColor,greenColor,blueColor);
+    background(redColor,greenColor,blueColor); 
+    push();
+    translate(x2,y2);
+    rotate(angle);
+    fill(0);
+    rectMode(CENTER);
+    rect(0, 0, 100, 50);
+    x2 = x + 2;
+    angle = angle + 5;
+    pop()
+
+    push()
+    translate(300,300);
+    rotate(-angle * 3);
+    scale(4);
+    fill(50, 100, 255);
+    rectMode(CENTER);
+    rect(0,0,100, 50);
+    pop();
+    //without push/pop before the first translate, this will be affected by above, but
+    // if you don't want that and want more math to calculate add-
+    //rotate(-angle);
+    //translate(-50, -50);
+
+
     
-    
-  
     fill(255);
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
@@ -46,12 +70,4 @@ function draw()
     }
     
      x += movement;
-
-    translate(x2,y2);
-    rotate(angle);
-    fill(0);
-    rectMode(CENTER);
-    rect(0, 0, 100, 50);
-    x2 = x + 2;
-    angle = angle + 5;
   }
