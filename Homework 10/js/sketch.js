@@ -8,15 +8,17 @@ var age = 67;
 var redColor = 123;
 var greenColor = 39;
 var blueColor = 21;
-
-
 /*
  the setup function ensures we have a canvas to draw on,
  and is only done one time
  */
-var larmx = 150;
+var larmX = 150;
+var larmY = 132;
+var larmDriection = 1;
+
+var x = 100;
 var y = 200;
-var diameter = 50
+var diameter = 500
 function doSomething()
   {
    var myFavoriteColor = "blue";
@@ -29,7 +31,7 @@ for(var i = 0; i < 3; i++)
   var movement = 8;
 function setup()
   {
-    createCanvas(500,600);
+    createCanvas(500,800);
     movement = Math.floor(Math.random() * 10) +1;
   } 
 function draw()
@@ -39,7 +41,20 @@ function draw()
     greenColor++;
     blueColor++;
     myFavoriteNumber+= 2;
-    console.log(myFavoriteNumber);
+    fill(569);
+    circle(x,y,diameter);
+    fill(redColor,greenColor,blueColor);
+    circle(x,y,300);
+    x++;
+    y++;
+    if(x >= 500 || x <= 0)
+    {
+     
+      movement *= -1;
+    }
+
+     x += movement;
+
     //*hair*//
     fill(103, 59, 21);
     rect(213, 60, 75, 110);    
@@ -69,7 +84,11 @@ function draw()
     circle(174, 255 ,40);
     //*leftarm*//
     fill(200, 75, 600);
-    rect(larmx, 132, 45, 125);
+    rect(larmX, larmY, 45, 125);
+    larmX+=larmDirection;
+    if(larmX >= 500 || larmX <= 0)
+    {
+      larmDirection *= 11;}
     //*righthand*//
     fill(261, 215, 153);
     circle(300, 255 ,40);
@@ -107,6 +126,6 @@ function draw()
     textSize(20);
     text('"Hands In My Pocket"', 150, 510);
     text('By April Wilson-Nolen', 150, 540);
-     
+
   }
   
