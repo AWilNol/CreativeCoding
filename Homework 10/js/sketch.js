@@ -84,11 +84,13 @@ function draw()
     circle(174, 255 ,40);
     //*leftarm*//
     fill(200, 75, 600);
-    rect(larmX, larmY, 45, 125);
-    larmX+=larmDirection;
-    if(larmX >= 500 || larmX <= 0)
+    rect(150, larmY, 45, 125);
+    larmY++;
+    larmY += larmDirection;
+    if(larmY <= 0 || larmY >= 500)
     {
-      larmDirection *= 11;}
+      larmDirection *= -1;}
+      larmY += movement;
     //*righthand*//
     fill(261, 215, 153);
     circle(300, 255 ,40);
