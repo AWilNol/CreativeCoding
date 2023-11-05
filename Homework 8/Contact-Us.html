@@ -39,7 +39,7 @@
           document.getElementById("fName").focus();
           document.getElementById("fName").style.backgroundColor = "redOrange";
           document.getElementById("fNameMessage").innerHTML = "* Required";
-          document.getElementById("fNameMessage").style.color "redOrange";
+          document.getElementById("fNameMessage").style.color = "redOrange";
 
           return false;
         }
@@ -55,7 +55,7 @@
               document.getElementById("lName").focus();
           document.getElementById("lName").style.backgroundColor = "orange";
           document.getElementById("lNameMessage").innerHTML = "* Required";
-          document.getElementById("lNameMessage").style.color "orange";
+          document.getElementById("lNameMessage").style.color = "orange";
    
           return false;
         }
@@ -71,7 +71,7 @@
               document.getElementById("email").focus();
           document.getElementById("email").style.backgroundColor = "red";
           document.getElementById("emailMessage").innerHTML = "* Required";
-          document.getElementById("emailMessage").style.color "red";
+          document.getElementById("emailMessage").style.color = "red";
    
           return false;
         }
@@ -84,6 +84,7 @@
         var terms = document.getElementById("yes").checked;
         if(terms == false)
         {
+          document.getElementById("terms").focus();
           window.alert("Please accept the Terms of Agreement");
         }
       }
@@ -98,7 +99,7 @@
             <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
             <p></p>
             <p>Accept the terms of agreement-</p>
-            <p>Terms of Agreement: Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="no" name="accept">No</p>
+            <p>Terms of Agreement: Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="no" name="accept" required="required">No</p>
             <br>
             <button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button>
         </div>
