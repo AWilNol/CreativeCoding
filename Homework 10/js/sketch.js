@@ -56,16 +56,13 @@ function draw()
     greenColor++;
     blueColor++;
     myFavoriteNumber+= 2;
-    /*
-    this worked. It was so cool! Now it isn't working.
-    Adding the other shapes that need to move. It seems like 
-    I cut off the legs to the project; everything froze, 1/2 disappeared.*/ 
-    fill(569);
+    //*large circle*//
+    fill(0);
     circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
     circle(x,y,300);
     x++, y++;
-    if(x >= 500 || x <= 0 && y <= 0 || y >= 500)
+    if(x >= 500 || x <= 0)
    {
       movement *= -1;
     }
@@ -81,6 +78,7 @@ function draw()
     if(headX >= 500 || headX <= 0)
     {
       headDirection *= -1;
+      movement += -1;
     }
     //*face*//
     //*righteye*//
@@ -104,18 +102,19 @@ function draw()
     if(bodyX >= 500 || bodyX <= 0)
     {
       bodyDirection *= -1;
+      movement += -2;
     }
     //*lefthand*//
     fill(251, 215, 153);
     circle(174, 255, 40);
-    /*been froze since this*/
     //*leftarm*//
     fill(200, 75, 600);
     rect(150, larmY, 45, 125);
     larmY += larmDirection;
-    if(larmY <= 0 || larmY >= 600)
+    if(larmY <= 0 || larmY >= 800)
     {
       larmDirection *= -1;
+      movement *= -1;
     }
     //*righthand*//
     fill(261, 215, 153);
@@ -127,7 +126,7 @@ function draw()
     fill(58, 47, 203);
     rect(llegX, llegY, 50, 200);
     llegX++, llegY++;
-    if(llegX, llegY >= 500 || llegX, llegY <= 0)
+    if(llegX >= 600 || llegX <= 0)
    {
       movement *= -1;
     }
@@ -137,7 +136,7 @@ function draw()
     fill(58, 47, 203);
     rect(250, rlegY, 50, 200);
     rlegY += rlegDirection;
-    if(rlegY <= 0 || rlegY >= 600)
+    if(rlegY <= 0 || rlegY >= 800)
     {
       rlegDirection *= -1;
     }
