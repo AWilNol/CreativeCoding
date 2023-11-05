@@ -18,6 +18,8 @@ var headX = 250;
 var headY = 100;
 var headDiameter = 65;
 var headDirection = 2;
+var headDiameterDirection = 2;
+var headCount = 0;
 
 var size = 20;
 var count = 0;
@@ -70,10 +72,18 @@ function draw()
     //*head**//
     fill(251, 215, 153);
     circle(headX, 100, 65);
+    shapeSize(headDiameter)
     headX+=headDirection;
     if(headX >= 500 || headX <= 0)
     {
       headDirection *= -1;
+    }
+    headDiameter+=headDiameterDirection;
+    headCount++;
+    if(headCount > 5)
+    {
+      headDiameterDirection *= -1;
+      headCount = 0;
     }
     //*face*//
     //*righteye*//
