@@ -12,7 +12,7 @@ var larmDirection = 2;
 
 var headX = 250;
 var headY = 100;
-var headDirection = 2;
+var headDirection = 1;
 var headCount = 0;
 
 var rlegX = 197;
@@ -44,7 +44,7 @@ let angle = 0;
  
 var bodyX = 200;
 var bodyY = 132;
-var bodyDirection = 1;
+var bodyXDirection = 2;
 
 function setup()
   {
@@ -106,12 +106,12 @@ function draw()
     fill(200, 58, 590);
     rectMode(CENTER);
     rect(0, 0, 95, 115);
-    bodyX = x + 2;
+    bodyX += bodyXDirection;
     angle = angle + 5;
-    if(bodyX >= 800 || bodyX <= 0)
+    if(bodyX >= 500 || bodyX <= 0)
     {
       bodyXDirection *= -1;
-      movement += -1;   
+      movement += -2;   
     }
     pop()
 
