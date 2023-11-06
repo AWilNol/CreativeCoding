@@ -4,7 +4,37 @@
     <title>AWN's p5.js page</title>
     <script src="js/p5.js"></script>
     <script src="./js/sketch.js"></script>
- 
+  <div class="scrolling-text">
+    "Hands In My Pocket"
+    By April Wilson-Nolen
+    </div>
+
+ <style>
+  .scrolling-text {
+    position: relative;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    from {
+     left: 100%;
+     width: 500%; 
+    }
+    to {
+      left: -100%;
+      width: 500%;
+    }
+  }
+</style>
+
+<script>
+  function scrollleft() {
+    document.getElementById("scrolling-text").style.left = '100%';
+    setTimeout(scrollleft, 25);
+  }
+   scrollleft();
+</script>
   </head>
   <body>
     

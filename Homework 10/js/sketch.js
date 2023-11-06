@@ -46,6 +46,8 @@ var bodyX = 200;
 var bodyY = 132;
 var bodyXDirection = 2;
 
+
+
 function setup()
   {
     createCanvas(500,800);
@@ -184,5 +186,5 @@ function draw()
     }
     text('"Hands In My Pocket"', 150, 510);
     text('By April Wilson-Nolen', 150, 540);
-    }
+  }
   
