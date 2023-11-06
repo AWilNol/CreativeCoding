@@ -22,8 +22,8 @@
         width: 100%;
         max-height: 1080px;
       }
-    </style>   
-    
+    </style> 
+
     <script>
       {
        document.write("Hello, and all the best.");
@@ -31,15 +31,15 @@
       }
     </script>
     <script>
-      function checkboxes()
+      function checkBoxes()
       {
         var firstName = document.getElementById("fName").value;
         if(name == "")
         {
           document.getElementById("fName").focus();
-          document.getElementById("fName").style.backgroundColor = "redOrange";
+          document.getElementById("fName").style.backgroundColor = "red";
           document.getElementById("fNameMessage").innerHTML = "* Required";
-          document.getElementById("fNameMessage").style.color = "redOrange";
+          document.getElementById("fNameMessage").style.color = "red";
 
           return false;
         }
@@ -53,9 +53,9 @@
           if(lName == "")
         {
               document.getElementById("lName").focus();
-          document.getElementById("lName").style.backgroundColor = "orange";
+          document.getElementById("lName").style.backgroundColor = "red";
           document.getElementById("lNameMessage").innerHTML = "* Required";
-          document.getElementById("lNameMessage").style.color = "orange";
+          document.getElementById("lNameMessage").style.color = "red";
    
           return false;
         }
@@ -68,7 +68,7 @@
         var email = document.getElementById("email").value;
           if(email == "")
         {
-              document.getElementById("email").focus();
+          document.getElementById("email").focus();
           document.getElementById("email").style.backgroundColor = "red";
           document.getElementById("emailMessage").innerHTML = "* Required";
           document.getElementById("emailMessage").style.color = "red";
@@ -93,16 +93,16 @@
   </head>    
    <body>    
     <div>
-     <p></p>
-        
-            <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
-            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
-            <p></p>
-            <p>Accept the terms of agreement-</p>
-            <p>Terms of Agreement: Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="no" name="accept" required="required">No</p>
-            <br>
-            <button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button>
-        </div>
+     <p></p>        
+      <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
+      <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
+      <p>Email: <input type="text" id="email">&nbsp;<span id="emailMessage"></span></p>
+      <p>Accept the Terms of Agreement-</p>
+      <p>Terms of Agreement: Do you like the dragon? Please smile!<input type="radio" value="yes" id="yes" name="accept">Yes<input type="radio" value="no" id="terms" name="accept" required="required">No</p>
+      <br>
+      <button id="btnSubmit" class="btn btn-primary" onclick='checkBoxes();'>Submit My Info</button>
+    </div>
+    <div id="message"></div>
         
       <span id="ahref"><p style="text-align: center;"><a href="index.html" id="home">Back to the Start</a></p></span>
       <span id="ahref"><p style="text-align: center;"><a href="Words-Image.html" id="content">Story Please</a></p></span>
