@@ -39,7 +39,7 @@
       function checkBoxes()
       {
         var firstName = document.getElementById("fName").value;
-        if(name == "")
+        if(firstName == "")
         {
           document.getElementById("fName").focus();
           document.getElementById("fName").style.backgroundColor = "red";
@@ -55,9 +55,9 @@
           document.getElementById("fNameMessage").style.color = "white";
         }
           var lastName = document.getElementById("lName").value;
-          if(lName == "")
+          if(lastName == "")
         {
-              document.getElementById("lName").focus();
+          document.getElementById("lName").focus();
           document.getElementById("lName").style.backgroundColor = "red";
           document.getElementById("lNameMessage").innerHTML = "* Required";
           document.getElementById("lNameMessage").style.color = "red";

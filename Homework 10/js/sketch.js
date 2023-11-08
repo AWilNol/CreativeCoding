@@ -22,14 +22,17 @@ var rlegDirection = 1;
 var llegX = 197;
 var llegY = 250;
 var llegSize= 200;
+var llegDirection = 3;
 
 var size = 20;
 var count = 0;
 var sizeDirection = 2;
 
-var x = 100;
-var y = 200;
-var diameter = 500;
+var circleX = 100;
+var circleY = 200;
+var circleDiameter = 500;
+var circleDirection = 3;
+
 function doSomething()
   {
    var myFavoriteColor = "blue";
@@ -42,8 +45,8 @@ for(var i = 0; i < 3; i++)
 var movement = 6; 
 let angle = 0;
  
-var bodyX = 200;
-var bodyY = 132;
+var bodyX = 250;
+var bodyY = 195;
 var bodyXDirection = 2;
 
 
@@ -63,15 +66,15 @@ function draw()
     myFavoriteNumber+= 2;
     //*large circle*//
     fill(0);
-    circle(x,y,diameter);
+    circle(circleX,circleY,circleDiameter);
     fill(redColor,greenColor,blueColor);
-    circle(x,y,300);
-    x++; y++;
-    if(x >= 200 || x <= 0)
+    circle(circleX,circleY,300);
+    circleX++; circleY++;
+    if(circleX >= 200 || circleX <= 0)
    {
-      movement *= -1;
+      movement *= -3;
     }
-      x += movement;
+      circleX += movement;
     //*hair*//
     fill(103, 59, 21);
     rect(213, 60, 75, 110);    
