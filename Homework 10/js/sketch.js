@@ -72,7 +72,7 @@ function draw()
     x++; y++;
     if(x >= 200 || x <= 0)
    {
-      movement *= -3;
+      movement *= -1;
     }
       x += movement;
     //*hair*//
