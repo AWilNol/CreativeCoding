@@ -13,6 +13,7 @@ var larmDirection = 2;
 var headX = 250;
 var headY = 100;
 var headDirection = 1;
+var headDiameter = 65;
 var headCount = 0;
 
 var rlegX = 197;
@@ -22,16 +23,15 @@ var rlegDirection = 1;
 var llegX = 197;
 var llegY = 250;
 var llegSize= 200;
-var llegDirection = 3;
 
 var size = 20;
 var count = 0;
 var sizeDirection = 2;
 
-var circleX = 100;
-var circleY = 200;
-var circleDiameter = 500;
-var circleDirection = 3;
+var x = 100;
+var y = 200;
+var diameter = 500;
+
 
 function doSomething()
   {
@@ -66,15 +66,15 @@ function draw()
     myFavoriteNumber+= 2;
     //*large circle*//
     fill(0);
-    circle(circleX,circleY,circleDiameter);
+    circle(x,y,diameter);
     fill(redColor,greenColor,blueColor);
-    circle(circleX,circleY,300);
-    circleX++; circleY++;
-    if(circleX >= 200 || circleX <= 0)
+    circle(x,y,300);
+    x++; y++;
+    if(x >= 200 || x <= 0)
    {
       movement *= -3;
     }
-      circleX += movement;
+      x += movement;
     //*hair*//
     fill(103, 59, 21);
     rect(213, 60, 75, 110);    
