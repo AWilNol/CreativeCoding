@@ -60,6 +60,7 @@ function draw()
    background(134,196,249);
 
   //background circle 1
+  push()
   fill(245,94,172);
   circle(bgcircX,bgcircY,bgcircDiameter);
   if(bgcircX <= 600){
@@ -80,9 +81,10 @@ function draw()
     bgcircDiameter+=2;}
   else if(bgcircDiameter > 300){
     bgcircDiameter = 25;}
-    
+  pop()
+
   //background circle 2
-  fill(176,217,251);
+  fill(26,136,229);
   circle(bg2cX,bg2cY,bg2cDiameter);
   if(bg2cX <= 600){
     bg2cX+=10;}
