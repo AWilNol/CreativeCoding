@@ -2,8 +2,8 @@ var bgcircX = 50;
 var bgcircY = 50;
 var bgcircDiameter = 25;
 
-var bg2cX = 40;
-var bg2cY = 40;
+var bg2cX = 300;
+var bg2cY = 340;
 var bg2cDiameter = 30
 
 
@@ -91,7 +91,7 @@ function draw()
   else if(bg2cX == 550 || bg2cX <= 600){
     bgcircX+=4;}
   else if(bg2cX > 600){
-    bg2cX = 40;}
+    bg2cX = 350;}
   if(bg2cY <= 800){
     bg2cY+=3;}
   else if(bg2cY == 750 || bg2cY <= 800){
@@ -151,7 +151,4 @@ function draw()
 
   //left shoe
   fill(200,141,251);
-  circle(lshuX,lshuY,lshuDiameter);
-
-  
-}
+  circle(lshuX,lshuY,lshuDiameter);}
