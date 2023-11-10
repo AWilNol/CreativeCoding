@@ -94,7 +94,7 @@ function draw()
     bg2cX = 350;}
   if(bg2cY <= 800){
     bg2cY+=3;}
-  else if(bg2cY == 750 || bg2cY <= 800){
+  else if(bg2cY == 800 || bg2cY <= 80){
     bg2cY+=5;}
   else if(bg2cY > 500){
     bg2cY = 40;}
@@ -152,3 +152,14 @@ function draw()
   //left shoe
   fill(200,141,251);
   circle(lshuX,lshuY,lshuDiameter);}
+
+  if(keyIsDown(83)){
+    Y += 10;}
+  else if(keyIsDown(87)){
+    Y -+ 10;}
+  function keyPressed(){
+  if (key == 'd'){
+     X += 10;}
+  else if (key == 'a'){
+     X -+ 10;}
+}
