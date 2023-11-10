@@ -49,14 +49,14 @@ var bodyX = 250;
 var bodyY = 195;
 var bodyXDirection = 2;
 
-
-
 function setup()
   {
     createCanvas(500,800);
     angleMode(DEGREES);
     movement = Math.floor(Math.random() * 10) +1;
-  } 
+  }
+
+
 function draw()
   {
     background(redColor,greenColor,blueColor);
