@@ -94,7 +94,7 @@ function draw()
     bg2cX = 350;}
   if(bg2cY <= 800){
     bg2cY+=3;}
-  else if(bg2cY == 800 || bg2cY <= 80){
+  else if(bg2cY == 750 || bg2cY <= 800){
     bg2cY+=5;}
   else if(bg2cY > 500){
     bg2cY = 40;}
