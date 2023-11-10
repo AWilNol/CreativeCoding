@@ -2,6 +2,10 @@ var bgcircX = 50;
 var bgcircY = 50;
 var bgcircDiameter = 25;
 
+var bg2cX = 40;
+var bg2cY = 40;
+var bg2cDiameter = 30
+
 
 var headX = 200;
 var headY = 340;
@@ -53,7 +57,9 @@ function setup()
 }
 function draw()
 {
-  background(134,196,249);
+   background(134,196,249);
+
+  //background circle 1
   fill(245,94,172);
   circle(bgcircX,bgcircY,bgcircDiameter);
   if(bgcircX <= 600){
@@ -74,6 +80,29 @@ function draw()
     bgcircDiameter+=2;}
   else if(bgcircDiameter > 300){
     bgcircDiameter = 25;}
+    
+  //background circle 2
+  fill(176,217,251);
+  circle(bg2cX,bg2cY,bg2cDiameter);
+  if(bg2cX <= 600){
+    bg2cX+=10;}
+  else if(bg2cX == 550 || bg2cX <= 600){
+    bgcircX+=4;}
+  else if(bg2cX > 600){
+    bg2cX = 40;}
+  if(bg2cY <= 800){
+    bg2cY+=3;}
+  else if(bg2cY == 750 || bg2cY <= 800){
+    bg2cY+=5;}
+  else if(bg2cY > 500){
+    bg2cY = 40;}
+  if(bg2cDiameter <= 200){
+    bg2cDiameter+=8;}
+  else if(bg2cDiameter > 400 || bg2cDiameter <= 300){
+    bg2cDiameter+=2;}
+  else if(bg2cDiameter > 300){
+    bg2cDiameter = 30;}
+
   //hat
   fill(180,134,249);
   circle(hatX,hatY,hatDiameter);
@@ -82,6 +111,10 @@ function draw()
   fill(0);
   circle(hairX,hairY, hairDiameter);
 
+  //body
+  fill(146,43,234)
+  ellipse(bodyX,bodyY,100,200);
+
   //left leg
   fill(92,106,246);
   ellipse(llegX,llegY,40,200);
@@ -89,11 +122,6 @@ function draw()
   //right leg
   fill(92,106,246);
   ellipse(rlegX,rlegY,40,200);
-
-
-  //body
-  fill(146,43,234)
-  ellipse(bodyX,bodyY,100,200);
 
   //head
   fill(250,217,178);
