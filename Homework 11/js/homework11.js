@@ -74,7 +74,7 @@ function draw()
     {
         shapeX = 0;
     }
-    if(shapeX < 0)
+    else if(shapeX < 0)
     {
         shapeX = width;
     }
@@ -82,7 +82,7 @@ function draw()
     {
         shapeY = 0;
     }
-    if(shapeY < 0)
+    else if(shapeY < 0)
     {
         shapeY = height;
     }
@@ -91,7 +91,7 @@ function draw()
     {
         shape2X = 0;
     }
-    if(shape2X < 0)
+    else if(shape2X < 0)
     {
         shape2X = width;
     }
@@ -99,7 +99,7 @@ function draw()
     {
         shape2Y = 0;
     }
-    if(shape2Y < 0)
+    else if(shape2Y < 0)
     {
         shape2Y = height;
     }
