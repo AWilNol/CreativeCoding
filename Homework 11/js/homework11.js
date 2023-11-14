@@ -13,6 +13,11 @@ var shapeY = 70;
 var shapeXSpeed;
 var shapeYSpeed;
 
+var shape2X = 300;
+var shape2Y = 110;
+var shape2XSpeed;
+var shape2YSpeed;
+
 // create a shape when the mouse is clicked
 var mouseShapeX;
 var mouseShapeY;
@@ -22,6 +27,9 @@ var mouseShapeY;
     // get a random speed when the it first starts
     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+
     createCharacter(300,450);
 }
 
@@ -47,14 +55,20 @@ function draw()
     fill(13,145,14);
     // draw the shape
     circle(shapeX, shapeY, 20);
+    fill(146,43,234);
+    circle(shape2X, shape2Y, 25)
 
      // get a random speed when the it first starts
      shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
      shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+     shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+     shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
     // move the shape
     shapeX += shapeXSpeed;
     shapeY += shapeYSpeed;
+    shape2X += shape2XSpeed;
+    shape2Y += shape2YSpeed;
     // check to see if the shape has gone out of bounds
     if(shapeX > width)
     {
@@ -71,6 +85,23 @@ function draw()
     if(shapeY < 0)
     {
         shapeY = height;
+    }
+
+    if(shape2X > width)
+    {
+        shape2X = 0;
+    }
+    if(shape2X < 0)
+    {
+        shape2X = width;
+    }
+    if(shape2Y > height)
+    {
+        shape2Y = 0;
+    }
+    if(shape2Y < 0)
+    {
+        shape2Y = height;
     }
 
     // check to see if the character has left the exit
