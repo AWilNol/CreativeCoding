@@ -36,8 +36,7 @@ function draw()
 {
     background(142,38,169);
     stroke(0);
-    fill(0);
-    
+    fill(0);    
     // call createBorders function
     createBorders(9);
     //createCharacter(200,350);
@@ -66,6 +65,7 @@ function mouseClack()
   fill(55,130,201);
   circle(mouseShapeX, mouseShapeY, 30);  
 }
+
 function createEnemy()
 {
   fill(13,145,14);
