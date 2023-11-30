@@ -24,6 +24,9 @@ var shape1, shape2;
     {
       shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
       shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+      shapeXs[i] = getRandomNumber(500);
+      shapeYs[i] = getRandomNumber(600);
+      diameters[i] = getRandomNumber(30);
     // get a random speed when the it first starts
     shape1 = new Rectangle(100,100,20,30,120,20,250);
     shape2 = new Rectangle(200,300,50,80,220,120,20);
