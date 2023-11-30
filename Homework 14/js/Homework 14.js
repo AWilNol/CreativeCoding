@@ -14,34 +14,21 @@ var d = 68;
 var mouseShapeX;
 var mouseShapeY;
 
+var shape1, shape2;
  function setup()
  {
     createCanvas(800,600);
     for(var i = 0; i < 6; i++)
     {
-     myXs[i] = x;
-     myYs[i] = y;
-     myDiameters[i] = diameter;
-     x += 50;
-     y += 80;
-     diameter += 25;
-    }
-     // get a random speed when the it first starts
-    shapemyXsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapemyYsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapemyDiametersSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    // get a random speed when the it first starts
+    shape1 = new Rectangle(100,100,20,30,120,20,250);
+    shape2 = new Rectangle(200,300,50,80,220,120,20);
     createCharacter(250,350);
  } 
   
 
  function draw()
  {
-    background(0);
-    for(var i = 0; i < myXs.length; i++){
-
-    circle(myXs[i],myYs[i],myDiameters[i]);
-    }
-
     background(142,38,169);
     stroke(0);
     fill(0);    
@@ -61,7 +48,7 @@ var mouseShapeY;
     //exit message
     saySo();
      
-    }
+}
 
 function saySo()
 {
