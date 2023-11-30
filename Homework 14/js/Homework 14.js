@@ -27,13 +27,8 @@ var shape1, shape2;
       shapeXs[i] = getRandomNumber(500);
       shapeYs[i] = getRandomNumber(600);
       diameters[i] = getRandomNumber(30);
-    // get a random speed when the it first starts
-    shape1 = new Rectangle(100,100,20,30,120,20,250);
-    shape2 = new Rectangle(200,300,50,80,220,120,20);
-    shape3 = new Circle(142,38,60);
-    shape4 = new Circle(200,380,40);
-    shape5 = new Circle(400,80,55);
-    createCharacter(250,350);
+    }
+      createCharacter(250,350);
  } 
   
 
@@ -76,42 +71,34 @@ function createEnemy()
 {
   fill(13,145,14);
   // draw the shape
-shape1.draw();
-shape2.draw();
-shape3.draw();
-shape4.draw();
-shape5.draw();
-shape6.draw(); 
+  for (var i = 0; i < shapeXs.length; i++) {
+    circle(shapeXs[i]. shapeYs[i], diameters[i]);
+    shapeXSpeeds = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeeds = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    
 }
 
 function enemyMovement()
 {
-  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-
   // move the shape
-  shapeX += shapemyXsSpeed;
-  shapeY += shapemyYsSpeed;
-  shape2X += shape2XSpeed;
-  shape2Y += shape2YSpeed;
+  shapeXs[i] += shapemyXsSpeeds[i];
+  shapeYs[i] += shapemyYsSpeeds[i];
   // check to see if the shape has gone out of bounds
-  if(shapeX > width)
+  if(shapeXs[i] > width)
   {
-      shapemyXs = 0;
+      shapemyXs[i] = 0;
   }
-  else if(shapemyXs < 0)
+  if(shapeXs[i] < 0)
   {
-      shapemyXs = width;
+      shapeXs[i] = width;
   }
-  if(shapemyYs > height)
+  if(shapeYs[i] > height)
   {
-      shapemyYs = 0;
+      shapeYs[i] = 0;
   }
-  else if(shapemyYs < 0)
+  else if(shapeYs[i] < 0)
   {
-      shapemyYs = height;
+      shapeYs[i] = height;
   }
 }
 
