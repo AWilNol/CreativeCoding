@@ -10,17 +10,18 @@ var d = 68;
 // create a shape when the mouse is clicked
 var mouseShapeX;
 var mouseShapeY;
+var shapeX = 30;
+var shapeY = 50;
 var shapeXs = [];
 var shapeYs = [];
 var diameters = [];
 var shapeXSpeeds = [];
 var shapeYSpeeds = [];
 
-var shape1, shape2;
- function setup()
+function setup()
  {
     createCanvas(800,600);
-    for(var i = 0; i < 6; i++)
+    for(var i = 0; i < 9; i++)
     {
       shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
       shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
@@ -52,7 +53,6 @@ var shape1, shape2;
     characterBoundary();
     // create the shape based on the mouse click
     mouseClack();
-    getRandomNumber();
 }
 
 function saySo()
@@ -69,24 +69,23 @@ function mouseClack()
 
 function createEnemy()
 {
-  fill(13,145,14);
+  fill(70,35,245);
   // draw the shape
   for (var i = 0; i < shapeXs.length; i++) {
-    circle(shapeXs[i]. shapeYs[i], diameters[i]);
-    shapeXSpeeds = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeYSpeeds = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    
+    circle(shapeXs[i], shapeYs[i], diameters[i]);
+    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);}    
 }
 
 function enemyMovement()
 {
   // move the shape
-  shapeXs[i] += shapemyXsSpeeds[i];
-  shapeYs[i] += shapemyYsSpeeds[i];
+  shapeXs[i] += shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
   // check to see if the shape has gone out of bounds
   if(shapeXs[i] > width)
   {
-      shapemyXs[i] = 0;
+      shapeXs[i] = 0;
   }
   if(shapeXs[i] < 0)
   {
@@ -96,7 +95,7 @@ function enemyMovement()
   {
       shapeYs[i] = 0;
   }
-  else if(shapeYs[i] < 0)
+  if(shapeYs[i] < 0)
   {
       shapeYs[i] = height;
   }
