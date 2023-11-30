@@ -1,17 +1,212 @@
- var x = 50;
- var y = 50;
- var diameter = 25;
- var x1 = 150;
- var y1 = 150;
- var diameter1 = 125;
+ var myXs = [];
+ var myYs = [];
+ var myDiameters = [];
+ // x and y for my character
+var characterX = 100;
+var characterY = 100;
+// define the key codes for each letter
+var w = 87; 
+var s = 83;
+var a = 65;
+var d = 68;
 
-  function setup()
+// x and y for a shape
+var shapeX = 30;
+var shapeY = 50;
+var shapeXSpeed;
+var shapeYSpeed;
+
+var shape2X = 300;
+var shape2Y = 110;
+var shape2XSpeed;
+var shape2YSpeed;
+
+// create a shape when the mouse is clicked
+var mouseShapeX;
+var mouseShapeY;
+
+ function setup()
  {
      createCanvas(800,600);
+     var x = 50;
+     var y = 40;
+     var diameter = 25;
+     for(var i = 0; i < 6; i++)
+     {
+         myXs[i] = x;
+         myYs[i] = y;
+         myDiameters[i] = diameter;
+         x += 50;
+         y += 80;
+         diameter += 25;
+     }
+     // get a random speed when the it first starts
+    shapemyXsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapemyYsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapemyDiametersSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    createCharacter(250,350);
  } 
+  
 
  function draw()
  {
-     circle(x,y,diameter);
-     circle(x1,y1,diameter1)
+    background(0);
+    for(var i = 0; i < myXs.length; i++){
+
+      circle(myXs[i],myYs[i],myDiameters[i]);
+    }
+
+    background(142,38,169);
+    stroke(0);
+    fill(0);    
+    // call createBorders function
+    createBorders(9);
+    //createCharacter(200,350);
+    drawCharacter();
+    characterMovement();
+    // call createEnemy    
+    createEnemy();
+     // get a random speed when the it first starts
+    enemyMovement();
+    // check to see if the character has left the exit
+    characterBoundary();
+    // create the shape based on the mouse click
+    mouseClack();
+    //exit message
+    saySo();
+     
+    }
+
+    function saySo()
+{
+  textSize(18);
+  text("Next-ZOMBIES! >", width-170,height-50)
+}
+
+function mouseClack()
+{
+  fill(55,130,201);
+  circle(mouseShapeX, mouseShapeY, 30);  
+}
+
+function createEnemy()
+{
+  fill(13,145,14);
+  // draw the shape
+  circle(shapeX, shapeY, 10);
+  fill(12,65,125);
+  circle(shape2X, shape2Y, 25);  
+}
+
+function enemyMovement()
+{
+  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+
+  // move the shape
+  shapeX += shapeXSpeed;
+  shapeY += shapeYSpeed;
+  shape2X += shape2XSpeed;
+  shape2Y += shape2YSpeed;
+  // check to see if the shape has gone out of bounds
+  if(shapeX > width)
+  {
+      shapeX = 0;
+  }
+  else if(shapeX < 0)
+  {
+      shapeX = width;
+  }
+  if(shapeY > height)
+  {
+      shapeY = 0;
+  }
+  else if(shapeY < 0)
+  {
+      shapeY = height;
+  }
+}
+
+function characterMovement()
+{
+  // handle the keys
+  if(keyIsDown(w))
+  {
+      characterY -= 20;   
+  }
+  if(keyIsDown(s))
+  {
+      characterY += 20;   
+  }
+  if(keyIsDown(a))
+  {
+      characterX -= 20;   
+      console.log("movement: " + characterX);
+  }
+  if(keyIsDown(d))
+  {
+      characterX += 20;   
+  }
+}
+
+function createCharacter(x,y)
+{
+  characterX = x;
+  characterY = y;
+  console.log(characterX);
+}
+
+function drawCharacter()
+{
+  fill(23,40,123);
+  circle(characterX,characterY,25);
+}
+
+function createBorders(thickness)
+{
+  // top border
+  rect(0,0,width,thickness);
+  // left border
+  rect(0,0,thickness,height);
+  // bottom border
+  rect(0, height-thickness,width, thickness);
+  // right upper border
+  rect(width-thickness,0,thickness,height-50);
+}
+
+function characterBoundary()
+{
+if(characterX > width && characterY > width-50)
+    {
+      fill(0);
+      stroke(5);
+      textSize(26);
+      text("Congrats!", width/2-50, height/2-50);
+    }   
+}
+function mouseClicked()
+{
+  mouseShapeX = mouseX;
+  mouseShapeY = mouseY;
+}
+
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+      characterX -= 10;
+  } 
+  else if (keyCode === RIGHT_ARROW) {
+      characterX += 10;
+  }
+  else if (keyCode === UP_ARROW) {
+      characterY -= 10;
+  }
+  else if (keyCode === DOWN_ARROW) {
+      characterY += 10;
+  }
  }

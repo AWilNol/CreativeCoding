@@ -52,6 +52,17 @@ function draw()
     mouseClack();
     //exit message
     saySo();
+    youWin();
+}
+function youWin()
+{
+  if(characterX > width && characterY > width-50)
+    {
+        fill(0);
+        stroke(5);
+        textSize(26);
+        text("Congrats! You Escaped!", width/2-50, height/2-50);
+    }
 }
 
 function saySo()
