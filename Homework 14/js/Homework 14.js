@@ -10,44 +10,26 @@ var s = 83;
 var a = 65;
 var d = 68;
 
-// x and y for a shape
-var shapeX = 30;
-var shapeY = 50;
-var shapeXSpeed;
-var shapeYSpeed;
-
-var shape2X = 300;
-var shape2Y = 110;
-var shape2XSpeed;
-var shape2YSpeed;
-
 // create a shape when the mouse is clicked
 var mouseShapeX;
 var mouseShapeY;
 
  function setup()
  {
-     createCanvas(800,600);
-     var x = 50;
-     var y = 40;
-     var diameter = 25;
-     for(var i = 0; i < 6; i++)
-     {
-         myXs[i] = x;
-         myYs[i] = y;
-         myDiameters[i] = diameter;
-         x += 50;
-         y += 80;
-         diameter += 25;
-     }
+    createCanvas(800,600);
+    for(var i = 0; i < 6; i++)
+    {
+     myXs[i] = x;
+     myYs[i] = y;
+     myDiameters[i] = diameter;
+     x += 50;
+     y += 80;
+     diameter += 25;
+    }
      // get a random speed when the it first starts
     shapemyXsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     shapemyYsSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     shapemyDiametersSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shape2XSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     createCharacter(250,350);
  } 
   
@@ -57,7 +39,7 @@ var mouseShapeY;
     background(0);
     for(var i = 0; i < myXs.length; i++){
 
-      circle(myXs[i],myYs[i],myDiameters[i]);
+    circle(myXs[i],myYs[i],myDiameters[i]);
     }
 
     background(142,38,169);
@@ -81,7 +63,7 @@ var mouseShapeY;
      
     }
 
-    function saySo()
+function saySo()
 {
   textSize(18);
   text("Next-ZOMBIES! >", width-170,height-50)
@@ -97,7 +79,7 @@ function createEnemy()
 {
   fill(13,145,14);
   // draw the shape
-  circle(shapeX, shapeY, 10);
+  circle(shapemyXs, shapemyYs, 10);
   fill(12,65,125);
   circle(shape2X, shape2Y, 25);  
 }
@@ -110,26 +92,26 @@ function enemyMovement()
   shape2YSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
   // move the shape
-  shapeX += shapeXSpeed;
-  shapeY += shapeYSpeed;
+  shapeX += shapemyXsSpeed;
+  shapeY += shapemyYsSpeed;
   shape2X += shape2XSpeed;
   shape2Y += shape2YSpeed;
   // check to see if the shape has gone out of bounds
   if(shapeX > width)
   {
-      shapeX = 0;
+      shapemyXs = 0;
   }
-  else if(shapeX < 0)
+  else if(shapemyXs < 0)
   {
-      shapeX = width;
+      shapemyXs = width;
   }
-  if(shapeY > height)
+  if(shapemyYs > height)
   {
-      shapeY = 0;
+      shapemyYs = 0;
   }
-  else if(shapeY < 0)
+  else if(shapemyYs < 0)
   {
-      shapeY = height;
+      shapemyYs = height;
   }
 }
 
