@@ -34,6 +34,8 @@ var shape1, shape2;
     fill(0);    
     // call createBorders function
     createBorders(9);
+    //exit message
+    saySo();
     //createCharacter(200,350);
     drawCharacter();
     characterMovement();
@@ -45,15 +47,12 @@ var shape1, shape2;
     characterBoundary();
     // create the shape based on the mouse click
     mouseClack();
-    //exit message
-    saySo();
-     
 }
 
 function saySo()
 {
   textSize(18);
-  text("Next-ZOMBIES! >", width-170,height-50)
+  text("Next-ZOMBIES! >", width - 170, height - 50)
 }
 
 function mouseClack()
@@ -66,9 +65,12 @@ function createEnemy()
 {
   fill(13,145,14);
   // draw the shape
-  circle(shapemyXs, shapemyYs, 10);
-  fill(12,65,125);
-  circle(shape2X, shape2Y, 25);  
+shape1.draw();
+shape2.draw();
+shape3.draw();
+shape4.draw();
+shape5.draw();
+shape6.draw(); 
 }
 
 function enemyMovement()
@@ -151,12 +153,12 @@ function createBorders(thickness)
 
 function characterBoundary()
 {
-if(characterX > width && characterY > width-50)
+if(characterX > width && characterY > width - 50)
     {
       fill(0);
       stroke(5);
       textSize(26);
-      text("Congrats!", width/2-50, height/2-50);
+      text("Congrats!", width / 2 - 50, height / 2 - 50);
     }   
 }
 function mouseClicked()
