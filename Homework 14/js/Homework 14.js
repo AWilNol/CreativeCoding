@@ -83,23 +83,25 @@ function enemyMovement()
   shapeXs[i] += shapeXSpeeds[i];
   shapeYs[i] += shapeYSpeeds[i];
   // check to see if the shape has gone out of bounds
-  for(var i = 0; i < shapeXSpeeds.length; i++)
+  for(var i = 0; i < shapeXSpeeds.length; i++){
+  shapeXs[i] += shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
+  }
   if(shapeXs[i] > width)
   {
-      shapeXs[i] = 0;
+    shapeXs[i] = 0;
   }
   if(shapeXs[i] < 0)
   {
-      shapeXs[i] = width;
+    shapeXs[i] = width;
   }
-  for(var i = 0; i < shapeYSpeeds.length; i++)
   if(shapeYs[i] > height)
   {
-      shapeYs[i] = 0;
+    shapeYs[i] = 0;
   }
   if(shapeYs[i] < 0)
   {
-      shapeYs[i] = height;
+    shapeYs[i] = height;
   }
  }
 
