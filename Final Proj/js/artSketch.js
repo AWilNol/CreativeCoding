@@ -1,6 +1,6 @@
 
-var characterX = 100;
-var characterY = 100;
+var characterX = 200;
+var characterY = 200;
 
 var headX = 200;
 var headY = 340;
@@ -48,8 +48,8 @@ var rshuDiameter = 35;
 var shapeX = 300;
 var shapeY = 340;
 
-var bgcircX = 50;
-var bgcircY = 50;
+var bgcircX = 150;
+var bgcircY = 150;
 var bgcircDiameter = 25;
 
 var bg2cX = 300;
@@ -71,7 +71,7 @@ function setup()
     shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     shapeXs[i] = getRandomNumber(500);
     shapeYs[i] = getRandomNumber(600);
-    diameters[i] = getRandomNumber(30);
+    diameters[i] = getRandomNumber(120);
   }
   createCharacter(250,350);
 }
