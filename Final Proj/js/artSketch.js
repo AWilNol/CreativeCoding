@@ -1,11 +1,6 @@
-var bgcircX = 50;
-var bgcircY = 50;
-var bgcircDiameter = 25;
 
-var bg2cX = 300;
-var bg2cY = 340;
-var bg2cDiameter = 30
-
+var characterX = 100;
+var characterY = 100;
 
 var headX = 200;
 var headY = 340;
@@ -50,40 +45,66 @@ var rshuX = 229;
 var rshuY = 730;
 var rshuDiameter = 35;
 
+var shapeX = 300;
+var shapeY = 340;
+
+var bgcircX = 50;
+var bgcircY = 50;
+var bgcircDiameter = 25;
+
+var bg2cX = 300;
+var bg2cY = 340;
+var bg2cDiameter = 30
+
+var shapeXs = [];
+var shapeYs = [];
+var diameters = [];
+
+var shapeXSpeeds = [];
+var shapeYSpeeds = [];
 
 function setup()
 {
   createCanvas(600,800);
+  for(var i = 0; i < 10; i++){
+    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeXs[i] = getRandomNumber(500);
+    shapeYs[i] = getRandomNumber(600);
+    diameters[i] = getRandomNumber(30);
+  }
+  createCharacter(250,350);
 }
+
 function draw()
 {
    background(134,196,249);
-
+   bigCirc();
+   bg2c();
+   stroke(0);
+   fill(0);
+   createBorders(6);
+   saySo();
+   shapeMovement();
   //background circle 1
-  
-  fill(245,94,172);
-  circle(bgcircX,bgcircY,bgcircDiameter);
-  if(bgcircX <= 600){
-    bgcircX+=10;}
-  else if(bgcircX == 550 || bgcircX <= 600){
-    bgcircX+=4;}
-  else if(bgcircX > 600){
-    bgcircX = 50;}
-  if(bgcircY <= 800){
-    bgcircY+=3;}
-  else if(bgcircY == 750 || bgcircY <= 800){
-    bgcircY+=5;}
-  else if(bgcircY > 500){
-    bgcircY = 50;}
-  if(bgcircDiameter <= 200){
-    bgcircDiameter+=8;}
-  else if(bgcircDiameter > 400 || bgcircDiameter <= 300){
-    bgcircDiameter+=2;}
-  else if(bgcircDiameter > 300){
-    bgcircDiameter = 25;}
-  
+   createShape();
+   createHat();
+   createHair();
+   createBody();
+   createLeftleg();
+   createRightleg();
+   createHead();
+   createFace();
+   createLeftarm();
+   createLeftarmshoulder();
+   createRightarm();
+   createRightarmshoulder();
+   createRightshoe();
+   createLeftshoe();
+}
 
-  //background circle 2
+function bg2c()
+{
   fill(26,136,229);
   circle(bg2cX,bg2cY,bg2cDiameter);
   if(bg2cX <= 600){
@@ -104,62 +125,200 @@ function draw()
     bg2cDiameter+=2;}
   else if(bg2cDiameter > 300){
     bg2cDiameter = 30;}
+}
 
+function bigCirc()
+{
+  fill(245,94,172);
+  circle(bgcircX,bgcircY,bgcircDiameter);
+  if(bgcircX <= 600){
+    bgcircX+=10;}
+  else if(bgcircX == 550 || bgcircX <= 600){
+    bgcircX+=4;}
+  else if(bgcircX > 600){
+    bgcircX = 50;}
+  if(bgcircY <= 800){
+    bgcircY+=3;}
+  else if(bgcircY == 750 || bgcircY <= 800){
+    bgcircY+=5;}
+  else if(bgcircY > 500){
+    bgcircY = 50;}
+  if(bgcircDiameter <= 200){
+    bgcircDiameter+=8;}
+  else if(bgcircDiameter > 400 || bgcircDiameter <= 300){
+    bgcircDiameter+=2;}
+  else if(bgcircDiameter > 300){
+    bgcircDiameter = 25;}
+}
+
+function createShape()
+{
+  fill(70,35,245);
+  // draw the shape
+  for (var i = 0; i < shapeXs.length; i++) {
+    circle(shapeXs[i], shapeYs[i], diameters[i]);
+    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  }   
+}
+
+function shapeMovement()
+{
+  // move the shape
+  shapeXs[i] += shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
+  // check to see if the shape has gone out of bounds
+  for(var i = 0; i < shapeXSpeeds.length; i++){
+  shapeXs[i] += shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
+  }
+  if(shapeXs[i] > width)
+  {
+    shapeXs[i] = 0;
+  }
+  if(shapeXs[i] < 0)
+  {
+    shapeXs[i] = width;
+  }
+  if(shapeYs[i] > height)
+  {
+    shapeYs[i] = 0;
+  }
+  if(shapeYs[i] < 0)
+  {
+    shapeYs[i] = height;
+  }
+}
+
+function createCharacter(x,y)
+{
+  characterX = x;
+  characterY = y;
+}
+
+function createBorders(thickness)
+{
+  // top border
+  rect(0,0,width,thickness);
+  // left border
+  rect(0,0,thickness,height);
+  // bottom border
+  rect(0,height-thickness,width,thickness);
+  // right upper border
+  rect(width-thickness,0,thickness,height);
+}
+
+function saySo()
+{
+  textSize(20);
+  text('"A Bid Of Adieu & Thanks" :)', 300, 510);
+  text('By April Wilson-Nolen', 300, 540); 
+}
+
+ function createHat()
+{
   //hat
   fill(180,134,249);
   circle(hatX,hatY,hatDiameter);
+}
 
+function createHair()
+{
   //hair
   fill(0);
   circle(hairX,hairY, hairDiameter);
+}
 
+function createBody()
+{
   //body
   fill(146,43,234)
   ellipse(bodyX,bodyY,100,200);
+}
 
+function createLeftleg()
+{
   //left leg
   fill(92,106,246);
   ellipse(llegX,llegY,40,200);
+}
 
+function createRightleg()
+{
   //right leg
   fill(92,106,246);
   ellipse(rlegX,rlegY,40,200);
+}
 
+function createHead()
+{
   //head
   fill(250,217,178);
   circle(headX,headY,headDiameter);
+}
 
+function createFace()//;
+{
+  //*face*//
+  //*righteye*//
+  fill(255, 255, 255);
+  ellipse(185, 330, 13, 5);
+  fill(10, 103, 233);
+  circle(185, 330, 3);
+  //*lefteye*//
+  fill(255, 255, 255);
+  ellipse(215, 330, 13, 5);
+  fill(10, 103, 233);
+  circle(215, 330, 3);
+  //*mouth*//
+  fill(232, 25, 78);
+  ellipse(200, 355, 18, 5);
+  line()
+}
+
+function createLeftarm()
+{
   //left arm
   fill(250,217,178);
   ellipse(lwlarmX, lwlarmY, 35,200);
+}
 
+function createLeftarmshoulder()
+{
   //left arm shoulder
   fill(148,43,233);
   circle(larmX,larmY,larmDiameter);
+}
 
+function createRightarm()
+{
   //right arm
   fill(250,217,178);
-  ellipse(lwrarmX,lwlarmY, 35,200); 
+  ellipse(lwrarmX,lwlarmY, 35,200);
+}
 
+function createRightarmshoulder()
+{
   //right arm shoulder
   fill(148,43,233);
   circle(rarmX,rarmY,rarmDiameter);
+}
 
+function createRightshoe()
+{
   //right shoe
   fill(200,141,251);
   circle(rshuX,rshuY,rshuDiameter);
+}
 
+function createLeftshoe()
+{
   //left shoe
   fill(200,141,251);
-  circle(lshuX,lshuY,lshuDiameter);}
+  circle(lshuX,lshuY,lshuDiameter);
+}
 
-  if(keyIsDown(83)){
-    Y += 10;}
-  else if(keyIsDown(87)){
-    Y -+ 10;}
-  function keyPressed(){
-  if (key == 'd'){
-     X += 10;}
-  else if (key == 'a'){
-     X -+ 10;}
+function getRandomNumber()
+{
+  return random(1,20);
 }
