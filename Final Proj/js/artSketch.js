@@ -85,8 +85,7 @@ function draw()
    fill(0);
    createBorders(6);
    saySo();
-   shapeMovement();
-  //background circle 1
+   shapeMovement();  
    createShape();
    createHat();
    createHair();
@@ -211,7 +210,7 @@ function createBorders(thickness)
 function saySo()
 {
   textSize(20);
-  text('"A Bid Of Adieu & Thanks" :)', 300, 510);
+  text('"A Bid Of Adieu & Thanks"', 300, 510);
   text('By April Wilson-Nolen', 300, 540); 
 }
 
